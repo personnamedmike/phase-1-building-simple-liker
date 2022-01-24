@@ -13,12 +13,7 @@ heart.addEventListener("click", (e) => {
   mimicServerCall()
     .then((response) => {
       console.log(response);
-      heart.classList.add("activated-heart");
-      if (heart.classList.contains("activated-heart")) {
-        heart.addEventListener("click", () => {
-          heart.classList.remove("activated-heart");
-        });
-      }
+      heart.classList.toggle("activated-heart");
     })
     .catch((error) => {
       modal.classList.remove("hidden");
